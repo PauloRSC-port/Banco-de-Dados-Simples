@@ -1,0 +1,21 @@
+print(" ------ BANCO DE DADOS -----")
+maioridade = qtdhomem = qtdmulher = 0
+while True:
+    idade = int(input("Digite a idade: "))
+    if idade >= 18:
+        maioridade += 1
+    sexo = ' '
+    while sexo not in 'MF':
+        sexo = str(input("Digite o sexo [M/F]: ")).strip().upper()[0]
+    if sexo == 'M':
+        qtdhomem += 1 
+    elif sexo in 'F' and idade < 20:
+        qtdmulher += 1
+    resp = ' '
+    while resp not in 'SN':
+        resp = str(input("Deseja Continuar? [S/N]: ")).strip().upper()[0]
+    if resp == 'N':
+        break
+print(f"Existem no banco de dados {maioridade} com mais de 18 anos.")
+print(f"Existem no banco de dados {qtdhomem} Homens.")
+print(f"Existem no banco de dados {qtdmulher} Mulheres com mais de 20 anos.")    
